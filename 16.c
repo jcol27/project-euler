@@ -26,17 +26,16 @@ const char* doubleString(char num[]) {
         }
         ans[i+1] = main + '0';
     }
+
     //if (ans[0] == '\000') {
     //    memmove (ans, ans+1, strlen (ans+1) + 1);
     //}
-    return ret;
+
+    return ans;
 }
 
 int main() {
-    // Could use strings to represent numbers?
+    printf("hello");
     char new[] = "123";
-    //char new2[] = doubleString(new);
-    //printf("%s", doubleString("456"));
-    printf("%s", doubleString(new, ret));
-    //printf("%s", doubleString(new2));
+    printf("%s", doubleString("0123"));
 }

@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
+// What is the value of the first triangle number to have over five hundred divisors?
+
 int main() {
     long int sum = 0;
     int count;
