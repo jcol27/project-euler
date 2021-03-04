@@ -1,7 +1,15 @@
 #include <stdio.h>
 #include <math.h>
-// There exists exactly one Pythagorean triplet for which a + b + c = 1000, a < b < c, a^2 + b^2 = c^2
-// Find the product abc.
+/*
+There exists exactly one Pythagorean triplet for which a + b + c = 1000, a < b < c, a^2 + b^2 = c^2
+Find the product abc.
+
+Brute force loop. Optimized by considering that a,b,c are interchangeable
+and thus the loops can begin at the current value of the previous variable
+plus 1.
+
+*/
+
 int main() {
     for (int a = 0; a < 1000; a++) {
         for (int b = a + 1; b < 1000; b++) {

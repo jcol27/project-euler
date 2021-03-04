@@ -1,5 +1,9 @@
 #include <stdio.h>
-// Find the sum of all the multiples of 3 or 5 below 1000.
+/* 
+Find the sum of all the multiples of 3 or 5 below 1000.
+
+Simple brute force loop using modulo operator
+*/
 int main () {
     int sum = 0;
     for (int i = 0; i < 1000; i++) {

@@ -1,11 +1,16 @@
 #include <stdio.h>
-// What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+/*
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+
+Unique dividers are: {20,19,18,17,16,15,14,13,12,11}
+For loop with no terminator increasing from 1, check if non divisible with modulo and early
+termination with break.
+*/
+
 int main() {
     int divs[10] = {20, 19, 18, 17, 16, 15, 14, 13, 12, 11};
-    long long int max = 20*19*18*17*16*15*14;
-    max = max*13*12*11*10*9*8*7*6*5*4*3*2;
-    for (long long int i = 1; i < max; i++) {
-        int factor  = 1;
+    for (int i = 1;;i++) {
+        int factor = 1;
         for (int j = 0; j < 10; j++) {
             if (i % divs[j] != 0) {
                 factor = 0;
@@ -17,4 +22,5 @@ int main() {
             break;
         }
     }
+
 }

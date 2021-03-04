@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <math.h>
-// Find the difference between the sum of the squares of the first 
-// one hundred natural numbers and the square of the sum.
+/* 
+Find the difference between the sum of the squares of the first 
+one hundred natural numbers and the square of the sum.
+
+Two simple for loops to calculate the two values
+*/
 int main() {
     int n = 100;
     // Sum of squares

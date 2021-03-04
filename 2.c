@@ -1,6 +1,10 @@
 #include <stdio.h>
-// By considering the terms in the Fibonacci sequence whose values do not exceed four million, 
-// find the sum of the even-valued terms.
+/* 
+By considering the terms in the Fibonacci sequence whose values do not exceed four million, 
+find the sum of the even-valued terms.
+
+Simple while loop 
+*/
 int main() {
     int prev = 1;
     int curr = 2;

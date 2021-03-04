@@ -1,7 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-// Find the largest palindrome made from the product of two 3-digit numbers.
+/*
+Find the largest palindrome made from the product of two 3-digit numbers.
 
+Brute force loop for products of two three digit numbers. Check for 
+palindrome for two cases (even/odd number of digits) by converting to 
+string. 
+*/
 int main() {
     // Loop through three digit numbers
     long int largest = 0;
