@@ -1,9 +1,11 @@
 import math
 
-# n! means n × (n − 1) × ... × 3 × 2 × 1
-# For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,
-# and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
-# Find the sum of the digits in the number 100!
+'''
+n! means n × (n − 1) × ... × 3 × 2 × 1
+For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,
+and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
+Find the sum of the digits in the number 100!
+'''
 
 # Multiply a string by a single digit number
 def stringSingleMulti(string, num):
@@ -28,6 +30,7 @@ def stringDoubleMulti(string, num):
 
 # Adds two strings
 def stringAdd(string1, string2):
+    # Solve with longer string first
     if (len(string2) > len(string1)):
         temp = string1
         string1 = string2
@@ -44,6 +47,7 @@ def stringAdd(string1, string2):
             a = carry + int(string1[-1-j])
             result = str(a % 10) + result
             carry = math.floor(a/10)
+    # Solve if strings are same length
     if (len(string1) == len(string2)):
         carry = 0
         result = ""        

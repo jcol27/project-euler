@@ -2,7 +2,7 @@
 #include <math.h>
 
 /*
-
+SEE 26.py
 */
 
 char longDivision(char number[], int divisor) 

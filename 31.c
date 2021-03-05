@@ -5,6 +5,10 @@
 There are eight coins in general circulation:
     1p, 2p, 5p, 10p, 20p, 50p, £1 (100p), and £2 (200p).
 How many different ways can £2 be made using any number of coins?
+
+This can be solved in many ways, but generating combinations 
+sequentially is a reasonable mix of memory efficiency and time
+efficiency.
 */
 
 int main() {
@@ -19,7 +23,6 @@ int main() {
         // Check if way sums to 200p
         if (way[0]*200 + way[1]*100 + way[2]*50 + way[3]*20 + way[4]*10 + way[5]*5 + way[6]*2 + way[7]*1 == goal) {
             ways++;
-            printf("way = [%d,%d,%d,%d,%d,%d,%d,%d]\n",way[0],way[1],way[2],way[3],way[4],way[5],way[6],way[7]);
             way[7] = 0;
             way[6]++;
             if (way[6] == 101) {

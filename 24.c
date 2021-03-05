@@ -14,6 +14,9 @@ positions i and j, and reversing i to n. This solves very quickly
 compare to brute force methods.
 */
 
+/*
+Reverses an array of length n from {start} to the end of the array
+*/
 void reverse(int arr[], int start, int n)
 {
     for (int low = start, high = n-1; low < high; low++, high--)
@@ -29,8 +32,11 @@ int main() {
     int perm[10] = {0,1,2,3,4,5,6,7,8,9};
     int count = 1;
 
+    // Loop up to one millionth permutation
     while (count < 1000000) {
         int i, j, k, temp;
+
+        // Find last decreasing subsequence
         for (i = n - 1; i > 0 && perm[i-1]>perm[i]; i--) {
             ;
         }
@@ -41,12 +47,15 @@ int main() {
             ;
         }
 
+        // Swap positions i and j and reverse the array from i to n
         temp = perm[j-1];
         perm[j-1] = perm[i-1];
         perm[i-1] = temp;
         reverse(perm, i, n);
         count = count + 1;
     }
+
+    // Print the solution
     printf("Solution is: ");
     for (int i = 0; i < n; i++) {
         printf("%d", perm[i]);

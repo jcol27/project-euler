@@ -2,8 +2,11 @@
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>
-// What is the sum of the digits of the number 2^1000?
+/*
+What is the sum of the digits of the number 2^1000?
 
+SEE 16.py
+*/
 const char* doubleString(char num[]) {
     // Takes a number in the form of a string and doubles it
     // Returns the result as a string

@@ -1,17 +1,26 @@
 #include <stdio.h>
 #include <math.h>
-// The following iterative sequence is defined for the set of positive integers:
-// n → n/2 (n is even)
-// n → 3n + 1 (n is odd)
-// Which starting number, under one million, produces the longest chain?
+/* 
+The following iterative sequence is defined for the set of positive integers:
+n → n/2 (n is even)
+n → 3n + 1 (n is odd)
+
+Which starting number, under one million, produces the longest chain?
+
+Simple brute force loop.
+*/
 
 int main() {
     int chain = 0;
     int max_chain = 0;
     long int max_chain_start = 0;
+
+    // Loop for numbers under one million
     for (long int i = 2; i < 1000000; i++) {
         long long int n = i;
         chain = 0;
+
+        // While loop for the iterative sequence
         while (n != 1) {
             if ((n % 2) == 0) {
                 n = n / 2;
@@ -21,6 +30,8 @@ int main() {
             }
             chain++;
         }
+
+        // Update max chain
         if (chain > max_chain) {
             max_chain = chain;
             max_chain_start = i;

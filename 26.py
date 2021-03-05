@@ -7,6 +7,10 @@ longest recurring cycle in its decimal fraction part.
 Solved using long division of numbers represented through 
 strings
 
+Hacky method to evaluate fractions to 10000 decimal places
+in the form of a string and then use string search methods
+to find the longest cycle. Works for the given range (d<1000)
+and specified decimal places. Not guaranteed to work generally.
 '''
 
 # Does long division on strings, allowing for much larger numbers than 

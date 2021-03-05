@@ -16,6 +16,8 @@ is obviously n*9^5. This gives:
     5   295245      99999
     6   354294      354294
     7   413343      n/a
+
+Therefore, we need only go up to n where (n-1)*(9^5) > 10^(n-1)
 */
 
 int main() {

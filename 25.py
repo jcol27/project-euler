@@ -1,8 +1,14 @@
 import math
-# What is the index of the first term
-# in the Fibonacci sequence to contain 1000 digits?
+'''
+What is the index of the first term
+in the Fibonacci sequence to contain 1000 digits?
+'''
 
 def add(a, b):
+    '''
+    Add two numbers expressed as strings
+    See earlier problems for commented method
+    '''
     carry = 0
     c = ""
     if (len(b) > len(a)):
@@ -57,8 +63,8 @@ def main():
     a = "1"
     b = "1"
 
+    # Loop until goal reached
     while (digits < 1000):
-        #print(f"a = {a}, b = {b}")
         c = add(a,b)
         a = b
         b = c

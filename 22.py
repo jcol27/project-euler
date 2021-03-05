@@ -10,6 +10,7 @@ the list to obtain a name score.
 What is the total of all the name scores in the file?
 '''
 
+# Read input file of names into a list
 with open("22_names.txt") as file:
     lines = file.read().splitlines()
     lines = lines[0].split(",")
@@ -17,6 +18,7 @@ with open("22_names.txt") as file:
         lines[i] = lines[i].replace('\"','')
     sorted_names = sorted(lines)
 
+# Loop through names and evaluate the name score for each
 total_value = 0
 for pos, name in enumerate(sorted_names):
     value = 0

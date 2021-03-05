@@ -6,8 +6,8 @@ Starting with the number 1 and moving to the right in a clockwise direction
 a 1001 by 1001 spiral can be formed. What is the sum of the numbers on the
 diagonals?
 
-Write out beginning of spiral and fit parabolas to diagonal series by solving
-simultaneous equations:
+We can write out the beginning of the spiral and fit polynomials to the 
+diagonal series by solving simultaneous equations. This gives:
 up + left diagonal: 1, 7, 21, 43, 73, 111
     pattern: a_n = 4n^2+2n+1
 up + right diagonal: 1, 9, 25, 49, 81, 121
@@ -26,14 +26,15 @@ int main() {
     int sum_up_right = 0;
     int sum_down_left = 0;
     int sum_down_right= 0;
-
+    
+    // Calculate the sums of the diagonals using the described formulas
     for (int i = 1; i < (spiral_size+1)/2; i++) {
         sum_up_left = sum_up_left + 4*pow(i,2) + 2*i + 1;
         sum_up_right = sum_up_right + 4*pow(i,2) + 4*i + 1;
         sum_down_left = sum_down_left + 4*pow(i,2) + 1;
         sum_down_right = sum_down_right + 4*pow(i,2) - 2*i + 1;
     }
+    // Calculate and display the sum
     sum = sum + sum_up_left + sum_up_right + sum_down_left + sum_down_right;
-
     printf("Sum = %d", sum);
 }

@@ -1,9 +1,23 @@
 import math
 
-# If all the numbers from 1 to 1000 (one thousand) 
-# inclusive were written out in words, how many letters would be used? 
+'''
+If all the numbers from 1 to 1000 (one thousand) 
+inclusive were written out in words, how many letters would be used? 
+Note: Do not count spaces or hyphens. For example, 342 (three hundred 
+and forty-two) contains 23 letters and 115 (one hundred and fifteen) 
+contains 20 letters. The use of "and" when writing out numbers is in 
+compliance with British usage.
+
+This can be done by splitting each number into its digits according to
+their position, with the final two digits kept together. Then each of 
+these digits can be evaluated separately to find the number of letters
+based on the digits and their position.
+'''
 
 def evalOnes(a):
+    '''
+    Evaluates the number of letters used by a single digit
+    '''
     if (a == 1 or a == 2 or a == 6):
         return 3
     elif (a == 4 or a == 5 or a == 9):
@@ -14,7 +28,10 @@ def evalOnes(a):
         return 0
 
 def evalTensAndOnes(a):
-
+    '''
+    Evaluates the number of letters used by a two digit pair (in the
+    final two places e.g. 17 = seventeen)
+    '''
     if (a > 99):    
         a = int(str(a)[-2:])
 
@@ -41,6 +58,10 @@ def evalTensAndOnes(a):
             return 7 + evalOnes(a - (b*10))
 
 def evalHundreds(a):
+    '''
+    Evaluates the number of letters used by a digit in the hundreds
+    place
+    '''
     if (a > 999):    
         a = int(str(a)[-3:])
         print(a)
@@ -54,10 +75,18 @@ def evalHundreds(a):
         return evalOnes(b) + 7 + 3
 
 def evalThousands(a):
+    '''
+    Evaluates the number of letters used by a digit in the thousands
+    place
+    '''
     b = int(math.floor(a/1000))
     return evalOnes(b) + 8
 
 def evalNum(a):
+    '''
+    Evaluates the number of letters in a number as a whole by breaking
+    it down into digits based on position
+    '''
     if a < 10:
         return evalOnes(a)
     elif a < 100:
@@ -65,18 +94,13 @@ def evalNum(a):
     elif a < 1000:
         return evalTensAndOnes(a) + evalHundreds(a)
     elif a < 10000:
-        #print(evalThousands(a))
         return evalThousands(a) + evalHundreds(a) + evalTensAndOnes(a)
     else:
         print("Error: number outside range (1-9999)")
 
-
-print(f"Num = {1000}, count = {evalNum(1000)}")
-
-
+# Calculate the number of letters in the numbers 1-1000 inclusive
 count = 0
 for i in range(1,1001):
     count += evalNum(i)
-    #print(f"Just evaluated {i}")
 
 print(f"Total count = {count}\n")

@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+/*
+SEE 17.py
+*/
+
 int letters(int a) {
     if (a == 1 || a == 2 || a == 6) {
         return 3;
